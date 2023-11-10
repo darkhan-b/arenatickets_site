@@ -1,5 +1,5 @@
 import { tokenService } from '@/utils/token.service'
-import { useGeneralStore } from '@/stores/general.store';
+import { useGeneralStore } from '@/stores/general.store'
 import { storeToRefs } from 'pinia'
 
 export const useAPI = (request: any, opts: any = {}) => {

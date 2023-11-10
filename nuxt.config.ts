@@ -11,18 +11,16 @@ export default defineNuxtConfig({
       },
       charset: 'utf-8',
       viewport:
-          'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
+        'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
       title: 'Продажа билетов на события в Казахстане',
       meta: [
         {
           name: 'description',
-          content:
-              'Продажа билетов на события в Казахстане'
+          content: 'Продажа билетов на события в Казахстане'
         },
         {
           name: 'og:description',
-          content:
-              'Продажа билетов на события в Казахстане'
+          content: 'Продажа билетов на события в Казахстане'
         },
         {
           name: 'og:title',
@@ -39,11 +37,10 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:description',
-          content:
-              'Продажа билетов на события в Казахстане'
+          content: 'Продажа билетов на события в Казахстане'
         },
         { name: 'author', content: 'Offlime.kz' }
-      ],
+      ]
       // script: [
       //   {
       //     hid: 'gtmHead',
@@ -60,7 +57,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL: process.env.NUXT_API_URL,
-      apiToken: process.env.NUXT_API_TOKEN,
+      apiToken: process.env.NUXT_API_TOKEN
     }
   },
   ssr: false,
@@ -76,21 +73,19 @@ export default defineNuxtConfig({
     },
     optimizeDeps: {
       include:
-          process.env.NODE_ENV === 'development'
-              ? ['naive-ui', 'vueuc']
-              : []
+        process.env.NODE_ENV === 'development' ? ['naive-ui', 'vueuc'] : []
     }
   },
   build: {
     transpile:
-        process.env.NODE_ENV === 'production'
-            ? [
-              'naive-ui',
-              'vueuc',
-              '@css-render/vue3-ssr',
-              '@juggle/resize-observer'
-            ]
-            : ['@juggle/resize-observer']
+      process.env.NODE_ENV === 'production'
+        ? [
+            'naive-ui',
+            'vueuc',
+            '@css-render/vue3-ssr',
+            '@juggle/resize-observer'
+          ]
+        : ['@juggle/resize-observer']
   },
   modules: ['@pinia/nuxt']
   // modules: ['nuxt-jsonld']
