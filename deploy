@@ -2,8 +2,7 @@ yarn lintfix && git add . && git commit --allow-empty -m "$1" && git push && ssh
   sudo -i
   cd /var/www/arenatickets_site;
   git pull;
-  . ~/.bashrc;
-  nvm use 18;
+  . ~/.nvm/nvm.sh use 18;
   yarn;
   yarn lintfix;
   yarn build;
