@@ -1,7 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "arenatickets-site",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port=3155",
