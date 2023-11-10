@@ -1,5 +1,13 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <n-message-provider>
+    <n-dialog-provider>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </n-dialog-provider>
+  </n-message-provider>
 </template>
+
+<script setup>
+import { NMessageProvider, NDialogProvider } from 'naive-ui'
+</script>
