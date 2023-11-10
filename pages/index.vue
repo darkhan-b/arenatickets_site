@@ -1,5 +1,5 @@
 <template>
-  <div class="container">hello</div>
+  <div class="container">arenatickets</div>
 </template>
 
 <script setup>
