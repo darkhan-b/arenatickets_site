@@ -1,0 +1,10 @@
+.header {
+  background: $primary;
+  color: white;
+  padding: 13px 0;
+  &--logo {
+    svg {
+      width: 100px;
+    }
+  }
+}

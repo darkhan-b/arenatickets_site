@@ -1,5 +1,5 @@
 <template>
-  <div class="container">arenatickets</div>
+  <div class="container py-5 text-center">в разработке</div>
 </template>
 
 <script setup>

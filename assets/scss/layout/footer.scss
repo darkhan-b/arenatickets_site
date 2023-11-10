@@ -1,0 +1,13 @@
+.footer {
+  background-color: $primary;
+  background-image: url('/images/footer-bg.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  color: white;
+  padding: 41px 0;
+  &--logo {
+    svg {
+      width: 100px;
+    }
+  }
+}
