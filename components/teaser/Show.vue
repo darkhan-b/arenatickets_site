@@ -3,7 +3,7 @@
     class="show-teaser"
     :href="`https://widget.arenatickets.kz/1/t/${show.timetables[0].id}/${show.timetables[0].uuid}`">
     <div class="position-relative img-wrapper">
-      <img :src="show.main" alt="" class="w-100" />
+      <img :src="show.teaser" alt="" class="w-100" />
       <div class="price d-flex justify-content-center align-items-center">
         {{ formatPrice(show.minCost) }}
       </div>
