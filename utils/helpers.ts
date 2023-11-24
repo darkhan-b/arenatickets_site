@@ -32,3 +32,9 @@ export const breadcrumbsFromCategoryTree = (tree: Array<any>) => {
     }
   })
 }
+
+export const translate = (key: string) => {
+  const generalStore = useGeneralStore()
+  const { translations } = storeToRefs(generalStore)
+  return translations.value?.[key] || key
+}

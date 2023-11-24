@@ -7,8 +7,15 @@
             <LogoSvg />
           </nuxt-link>
         </div>
-        <div class="col"></div>
-        <div class="col-auto text-uppercase">Контакты</div>
+        <div class="col text-center">
+          <ElementSearchHeader class="mx-auto" />
+        </div>
+        <div class="col-auto text-uppercase">
+          <div class="d-flex gap-5">
+            <nuxt-link>Как купить</nuxt-link>
+            <nuxt-link>Контакты</nuxt-link>
+          </div>
+        </div>
       </div>
     </div>
   </header>

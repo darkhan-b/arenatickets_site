@@ -10,13 +10,18 @@
 
 <script setup>
 import { useMessage } from 'naive-ui'
-import { storeToRefs } from 'pinia'
-import { useGeneralStore } from '~/stores/general.store'
+// import { storeToRefs } from 'pinia'
+// import { useGeneralStore } from '~/stores/general.store'
 
 const generalStore = useGeneralStore()
 const route = useRoute()
 
-const { isMobile } = storeToRefs(generalStore)
+const { isMobile, categories, cities, translations } = storeToRefs(generalStore)
+
+// const { data } = await useAPI(`settings`)
+// categories.value = data.value.categories
+// cities.value = data.value.cities
+// translations.value = data.value.translations
 
 onMounted(() => {
   window.$message = useMessage()

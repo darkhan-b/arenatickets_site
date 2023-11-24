@@ -31,7 +31,7 @@ export default {
     // countTextColor: string;
     // heightTiny: string;
     // heightSmall: string;
-    // heightMedium: string;
+    heightMedium: '38px',
     // heightLarge: string;
     // fontSizeTiny: string;
     // fontSizeSmall: string;

@@ -1,0 +1,23 @@
+.form-control {
+  height: 50px;
+}
+.form-control-purple {
+  border-radius: 44px;
+  padding: 0 30px;
+  border: none !important;
+  background: rgba(245, 245, 245, 0.12);
+  font-size: 16px;
+  &::placeholder {
+    color: #d9d9d9;
+    text-transform: uppercase;
+    opacity: 1; /* Firefox */
+  }
+  &::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    text-transform: uppercase;
+    color: #d9d9d9;
+  }
+  &:focus {
+    background: rgba(245, 245, 245, 0.2);
+  }
+}
