@@ -1,6 +1,7 @@
 <template>
   <div class="container py-5 text-center">
-    <HomeCategories />
+    <HomePopular :data="recommended" />
+    <HomeCategories class="mt-5 pt-3" />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ const generalStore = useGeneralStore()
 const { categories } = storeToRefs(generalStore)
 
 const { data } = await useAPI(`home`)
+const recommended = data.value.data.recommended
 // const blocks = data.value.data.blocks
 // const slides = data.value.data.slides
 // const cats = data.value.data.special_cats

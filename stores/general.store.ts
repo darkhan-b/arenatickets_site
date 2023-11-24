@@ -2,8 +2,10 @@ import { defineStore } from 'pinia'
 
 export const useGeneralStore = defineStore('general', {
   state: () => ({
-    clientId: null,
+    clientId: 1,
     isMobile: false,
+    locale: 'ru',
+    currency: 'KZT',
     categories: [],
     cities: [],
     paySystems: [],

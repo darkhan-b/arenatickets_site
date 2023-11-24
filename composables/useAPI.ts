@@ -5,11 +5,12 @@ import { storeToRefs } from 'pinia'
 export const useAPI = (request: any, opts: any = {}) => {
   const config = useRuntimeConfig()
   const generalStore = useGeneralStore()
-  const { clientId } = storeToRefs(generalStore)
+  const { clientId, locale } = storeToRefs(generalStore)
 
   opts.headers = {
     'X-API-TOKEN': config.public.apiToken,
-    'X-CLIENT-ID': clientId.value
+    'X-CLIENT-ID': clientId.value,
+    'Accept-Language': locale.value
   }
 
   const authToken = tokenService.getToken()

@@ -1,5 +1,10 @@
+import { useGeneralStore } from '~/stores/general.store'
+import { storeToRefs } from 'pinia'
+
 export const trans = (obj: any) => {
-  return obj.ru
+  const generalStore = useGeneralStore()
+  const { locale } = storeToRefs(generalStore)
+  return obj[locale.value] || obj.ru
 }
 
 export const formatNumber = (string: number) => {
@@ -7,7 +12,10 @@ export const formatNumber = (string: number) => {
 }
 
 export const formatPrice = (string: number) => {
-  return `${formatNumber(string)} ₸`
+  const generalStore = useGeneralStore()
+  const { currency } = storeToRefs(generalStore)
+  // return `${formatNumber(string)} ₸`
+  return `${formatNumber(string)} ${currency.value}`
 }
 
 export const copyObject = (obj: any) => {

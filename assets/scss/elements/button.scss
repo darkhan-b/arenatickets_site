@@ -5,4 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  &.n-button--loading {
+    .n-button__content {
+      display: none;
+    }
+    .n-button__icon {
+      margin-right: 0;
+    }
+  }
 }

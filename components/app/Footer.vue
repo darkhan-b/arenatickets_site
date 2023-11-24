@@ -7,12 +7,51 @@
             <LogoSvg />
           </nuxt-link>
         </div>
-        <div class="col text-end">О компании</div>
+        <div class="col text-end">
+          <div class="d-inline-flex gap-5">
+            <nuxt-link>Как купить билеты</nuxt-link>
+            <nuxt-link>Организаторам</nuxt-link>
+            <nuxt-link>О компании</nuxt-link>
+          </div>
+        </div>
       </div>
+      <div class="mt-5">
+        <div class="d-flex gap-5 align-items-center">
+          <div class="d-flex gap-4">
+            <a><FbSvg /></a>
+            <a><InstaSvg /></a>
+            <a><WhatsAppSvg /></a>
+          </div>
+          <a class="fw-bold text-white" href="mailto:info@arenatickets.kz"
+            >info@arenatickets.kz</a
+          >
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="fading-line"></div>
+      </div>
+      <div class="fw-bold mt-3">Подпишитесь на акции и анонсы событий</div>
+      <ElementSubscribeFooter class="mt-3" />
     </div>
   </footer>
 </template>
 
 <script setup>
 import LogoSvg from '~/assets/svg/logo_w.svg?component'
+import FbSvg from '~/assets/svg/social_fb.svg?component'
+import InstaSvg from '~/assets/svg/social_instagram.svg?component'
+import WhatsAppSvg from '~/assets/svg/social_whatsapp.svg?component'
 </script>
+
+<style scoped>
+.fading-line {
+  height: 2px;
+  width: 467px;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 217, 217, 0.35) 0%,
+    rgba(217, 217, 217, 0) 90.04%,
+    rgba(217, 217, 217, 0) 90.04%
+  );
+}
+</style>
