@@ -15,3 +15,34 @@
     }
   }
 }
+.btn-themed {
+  background-color: $primary;
+  color: white;
+  border: none !important;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 18px;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $primary !important;
+    color: white !important;
+    border: none !important;
+    svg {
+      left: 5px;
+    }
+  }
+  svg {
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    margin-left: 20px;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn-themed {
+    height: 50px;
+    font-size: 16px;
+  }
+}

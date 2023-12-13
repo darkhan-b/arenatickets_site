@@ -7,14 +7,16 @@
             <LogoSvg />
           </nuxt-link>
         </div>
-        <div class="col text-center">
-          <ElementSearchHeader class="mx-auto" />
+        <div class="col text-md-center text-end">
+          <ElementSearchHeader class="mx-auto" v-if="!isMobile" />
+          <ElementMobileSearchHeader class="me-0" v-if="isMobile" />
         </div>
         <div class="col-auto text-uppercase">
-          <div class="d-flex gap-5">
+          <div class="d-flex gap-5" v-if="!isMobile">
             <nuxt-link>Как купить</nuxt-link>
             <nuxt-link>Контакты</nuxt-link>
           </div>
+          <ElementMobileMenu class="ps-3" v-if="isMobile" />
         </div>
       </div>
     </div>
@@ -23,4 +25,7 @@
 
 <script setup>
 import LogoSvg from '~/assets/svg/logo_w.svg?component'
+const generalStore = useGeneralStore()
+
+const { isMobile } = storeToRefs(generalStore)
 </script>

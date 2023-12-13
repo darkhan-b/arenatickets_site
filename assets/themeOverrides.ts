@@ -23,8 +23,8 @@ export default {
     textColorGhostHover: '#000',
     textColorGhostActive: '#000',
     textColorGhostPressed: '#000',
-    heightMedium: '46px',
-    borderRadiusMedium: '10px'
+    heightMedium: '60px',
+    borderRadiusMedium: '55px'
   },
   Input: {
     // countTextColorDisabled: string;

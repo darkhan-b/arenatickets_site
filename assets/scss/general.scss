@@ -2,8 +2,8 @@ html {
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+  //-webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -29,20 +29,17 @@ h3 {
   color: $dark;
   text-align: left;
 }
-h1,
-h2 {
-  text-transform: uppercase;
-}
 h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 0;
 }
 h2 {
   font-size: 32px;
+  text-transform: uppercase;
   margin-bottom: 26px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 12px;
 }
 .pointer {
@@ -61,6 +58,18 @@ h3 {
   .n-input-wrapper {
     width: 100%;
   }
+}
+.html-article {
+  font-size: 18px;
+  p {
+    margin-bottom: 0;
+  }
+}
+.mt-section {
+  margin-top: 80px;
+}
+.mb-section {
+  margin-bottom: 80px;
 }
 .min-h-100vh {
   min-height: 100vh;
@@ -112,9 +121,18 @@ h3 {
   }
   h2,
   h3 {
-    font-size: 15px;
+    font-size: 16px;
   }
   body {
+    font-size: 13px;
+  }
+  .mt-section {
+    margin-top: 40px;
+  }
+  .mb-section {
+    margin-bottom: 40px;
+  }
+  .html-article {
     font-size: 13px;
   }
 }

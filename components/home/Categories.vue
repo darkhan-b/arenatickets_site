@@ -26,4 +26,11 @@ const { categories } = storeToRefs(generalStore)
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px 40px;
 }
+@media screen and (max-width: 768px) {
+  .categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+  }
+}
 </style>

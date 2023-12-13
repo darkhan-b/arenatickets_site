@@ -46,3 +46,8 @@ export const translate = (key: string) => {
   const { translations } = storeToRefs(generalStore)
   return translations.value?.[key] || key
 }
+
+export const toWidgetPurchase = (show: any) => {
+  const link = `https://widget.arenatickets.kz/1/t/${show.timetables[0].id}/${show.timetables[0].uuid}`
+  window.open(link, '_blank')
+}

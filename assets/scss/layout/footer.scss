@@ -5,9 +5,29 @@
   background-position: right top;
   color: white;
   padding: 41px 0;
+  a {
+    color: white;
+  }
   &--logo {
     svg {
       width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    background-size: 170px;
+    background-position: right bottom;
+    padding-bottom: 120px;
+    .footer-page-link {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .search-input {
+      height: 50px;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="`/category/${category.slug}`" class="category-teaser">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center text-start">
       <div class="category-title">{{ $trans(category.title) }}</div>
       <ArrowSvg class="svg-white arrow-svg" />
     </div>
@@ -38,6 +38,20 @@ const props = defineProps({
   }
   .arrow-svg {
     width: 41px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .category-teaser {
+    min-height: 120px;
+    padding: 12px;
+    background-size: 76px;
+    .category-title {
+      font-size: 16px;
+    }
+    .arrow-svg {
+      width: 22px;
+      margin-left: 10px;
+    }
   }
 }
 </style>

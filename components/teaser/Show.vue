@@ -1,7 +1,5 @@
 <template>
-  <a
-    class="show-teaser"
-    :href="`https://widget.arenatickets.kz/1/t/${show.timetables[0].id}/${show.timetables[0].uuid}`">
+  <nuxt-link v-if="show" class="show-teaser" :to="`/event/${show.slug}`">
     <div class="position-relative img-wrapper">
       <img :src="show.teaser" alt="" class="w-100" />
       <div class="price d-flex justify-content-center align-items-center">
@@ -14,7 +12,7 @@
       <div class="bubble"></div>
       <div>{{ show.placeString }}</div>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script setup>
@@ -34,12 +32,6 @@ const props = defineProps({
     border-radius: 22px;
     overflow: hidden;
   }
-  .bubble {
-    width: 3px;
-    height: 3px;
-    border-radius: 100%;
-    background-color: $dark;
-  }
   .price {
     position: absolute;
     border-radius: 55px;
@@ -48,6 +40,9 @@ const props = defineProps({
     background: rgba(255, 255, 255, 0.62);
     height: 30px;
     padding: 0 18px;
+  }
+  h3 {
+    font-size: 20px;
   }
 }
 </style>

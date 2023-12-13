@@ -2,16 +2,22 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-auto">
+        <div class="col-md-auto">
           <nuxt-link to="/" class="footer--logo">
             <LogoSvg />
           </nuxt-link>
         </div>
-        <div class="col text-end">
-          <div class="d-inline-flex gap-5">
-            <nuxt-link>Как купить билеты</nuxt-link>
-            <nuxt-link>Организаторам</nuxt-link>
-            <nuxt-link>О компании</nuxt-link>
+        <div class="col-md col-12 text-md-end mt-md-0 mt-4">
+          <div class="d-md-inline-flex gap-5">
+            <nuxt-link class="footer-page-link" to="/page/purchase"
+              >Как купить билеты</nuxt-link
+            >
+            <nuxt-link class="footer-page-link" to="/page/organizers"
+              >Организаторам</nuxt-link
+            >
+            <nuxt-link class="footer-page-link" to="/page/about"
+              >О компании</nuxt-link
+            >
           </div>
         </div>
       </div>
