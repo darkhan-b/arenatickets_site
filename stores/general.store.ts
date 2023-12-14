@@ -4,6 +4,7 @@ export const useGeneralStore = defineStore('general', {
   state: () => ({
     clientId: 1,
     isMobile: false,
+    windowWidth: 0,
     locale: 'ru',
     currency: 'KZT',
     categories: [],

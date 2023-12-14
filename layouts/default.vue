@@ -14,15 +14,21 @@ import { useMessage } from 'naive-ui'
 const generalStore = useGeneralStore()
 const route = useRoute()
 
-const { categories, cities, translations, isMobile } = storeToRefs(generalStore)
+const { categories, cities, translations, isMobile, windowWidth } =
+  storeToRefs(generalStore)
 
 onMounted(() => {
   window.$message = useMessage()
   window.addEventListener('resize', (e) => {
-    isMobile.value = window.innerWidth <= 768
+    sizing()
   })
-  isMobile.value = window.innerWidth <= 768
+  sizing()
 })
+
+const sizing = () => {
+  isMobile.value = window.innerWidth <= 768
+  windowWidth.value = window.innerWidth
+}
 
 useHead({
   meta: [

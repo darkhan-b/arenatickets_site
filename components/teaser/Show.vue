@@ -45,4 +45,11 @@ const props = defineProps({
     font-size: 20px;
   }
 }
+@media screen and (max-width: 768px) {
+  .show-teaser {
+    h3 {
+      font-size: 16px;
+    }
+  }
+}
 </style>

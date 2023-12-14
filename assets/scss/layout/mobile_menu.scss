@@ -1,0 +1,32 @@
+.n-drawer-body-content-wrapper {
+  padding: 0 !important;
+}
+.mobile-drawer {
+  background: $primary;
+  .logo-svg {
+    max-width: 74px;
+  }
+  color: #fff;
+  .footer-page-link {
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-size: 16px;
+  }
+  .content-part {
+    height: calc(100vh - 60px);
+    padding: 0 20px 60px 20px;
+    background-image: url('/images/footer-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 165px;
+  }
+  .mobile-menu-header {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px 0 12px;
+  }
+}

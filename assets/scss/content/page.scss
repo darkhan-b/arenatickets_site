@@ -1,0 +1,33 @@
+.page {
+  .page-title {
+    height: 340px;
+    background: linear-gradient(90deg, #dddff2 0%, #ffffff 57.44%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: 44px;
+      text-transform: uppercase;
+    }
+  }
+  article {
+    margin-top: 64px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    .page-title {
+      height: 140px;
+      h1 {
+        font-size: 20px;
+        text-transform: none;
+      }
+    }
+    article {
+      margin-top: 20px;
+      padding-bottom: 34px;
+    }
+  }
+}

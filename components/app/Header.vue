@@ -13,8 +13,8 @@
         </div>
         <div class="col-auto text-uppercase">
           <div class="d-flex gap-5" v-if="!isMobile">
-            <nuxt-link>Как купить</nuxt-link>
-            <nuxt-link>Контакты</nuxt-link>
+            <nuxt-link to="/page/purchase">Как купить</nuxt-link>
+            <nuxt-link to="/page/contacts">Контакты</nuxt-link>
           </div>
           <ElementMobileMenu class="ps-3" v-if="isMobile" />
         </div>

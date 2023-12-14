@@ -1,14 +1,20 @@
 <template>
   <div class="mb-section">
     <section>
-      <picture>
-        <source
-          v-if="show.mobileSlide"
-          media="(max-width:576px)"
-          class="w-100"
-          :srcset="show.mobileSlide" />
-        <img class="banner w-100" :src="show.slide" alt="banner" />
-      </picture>
+      <div class="position-relative">
+        <picture>
+          <source
+            v-if="show.mobileSlide"
+            media="(max-width:576px)"
+            class="w-100"
+            :srcset="show.mobileSlide" />
+          <img class="banner w-100" :src="show.slide" alt="banner" />
+        </picture>
+        <div class="shadow" v-if="isMobile"></div>
+        <ElementTag v-if="isMobile" class="abs-tag"
+          >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
+        >
+      </div>
     </section>
     <div class="container mt-md-5 mt-1">
       <section>
@@ -29,7 +35,7 @@
                 >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
               >
               <n-button
-                class="btn-themed text-uppercase w-100"
+                class="btn-themed text-uppercase w-100 mt-md-0 mt-2"
                 @click="toWidgetPurchase(show)"
                 >{{ $t('buy') }} <ArrowSvg class="svg-arrow svg-white"
               /></n-button>
@@ -79,5 +85,22 @@ const venue = show?.venue || null
 <style scoped lang="scss">
 .svg-arrow {
   width: 40px;
+}
+.abs-tag {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.shadow {
+  background: linear-gradient(
+    180.53deg,
+    rgba(0, 0, 0, 0) 0.72%,
+    rgba(0, 0, 0, 0.6) 99.8%
+  );
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  bottom: 0;
 }
 </style>

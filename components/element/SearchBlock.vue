@@ -6,7 +6,7 @@
       <n-spin size="small" />
     </div>
     <div v-else>
-      <div v-if="!found.length && q.length" class="text-muted py-4">
+      <div v-if="!found.length && q.length" class="text-muted py-4 text-center">
         {{ $t('no_data_available') }}
       </div>
       <div v-if="found.length > 0">
@@ -82,6 +82,11 @@ const search = async () => {
   }
   .arrow-svg {
     width: 20px;
+  }
+  &.mobile-search {
+    left: 20px;
+    width: calc(100% - 40px);
+    top: calc(100% + 10px);
   }
 }
 </style>
