@@ -70,6 +70,9 @@ const search = async () => {
   width: 100%;
   box-shadow: 0px 4px 22px 0px rgba(0, 0, 0, 0.25);
   border-radius: 22px;
+  a {
+    color: #000;
+  }
   .fading-line {
     height: 2px;
     width: 467px;
