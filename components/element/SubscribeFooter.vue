@@ -25,16 +25,11 @@ const subscribe = async () => {
     method: 'POST',
     body: { email: email.value }
   })
-  // if(error) {
-  //   console.log(parseAPIError(error))
-  //   alert(parseAPIError(error))
-  // }
-  // if (data) {
-  //   generalStore.setNotify({
-  //     type: 'success',
-  //     message: $t('subscribed')
-  //   })
-  // }
+  const message = data.value?.data?.message
+  if (message) {
+    window.$message.success(message)
+    email.value = ''
+  }
 }
 </script>
 

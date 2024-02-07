@@ -10,12 +10,14 @@ export const useGeneralStore = defineStore('general', {
     categories: [],
     cities: [],
     paySystems: [],
-    translations: {}
+    translations: {},
+    settings: {}
   }),
   actions: {
     async boot() {
       // runs before everything else
       const data = await useAPI(`settings`)
+      this.settings = data.value.data.settings
       this.categories = data.value.data.categories
       this.cities = data.value.data.cities
       this.translations = data.value.data.translations

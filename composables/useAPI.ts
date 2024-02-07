@@ -27,6 +27,9 @@ export const useAPI = async (request: any, opts: any = {}) => {
   })
 
   if (error?.value && window.$message) {
+    // const statusCode = error?.value?.statusCode
+    // if(statusCode === 404) {
+    // }
     window.$message.error(parseAPIError(error))
   }
 
