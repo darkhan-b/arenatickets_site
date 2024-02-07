@@ -2,9 +2,16 @@ import { useGeneralStore } from '~/stores/general.store'
 import { storeToRefs } from 'pinia'
 
 export const trans = (obj: any) => {
+  if (!obj) return ''
   const generalStore = useGeneralStore()
   const { locale } = storeToRefs(generalStore)
   return obj[locale.value] || obj.ru
+}
+
+export const setting = (code: string) => {
+  const generalStore = useGeneralStore()
+  const { settings } = storeToRefs(generalStore)
+  return trans(settings.value[code]?.body) || ''
 }
 
 export const formatNumber = (string: number) => {

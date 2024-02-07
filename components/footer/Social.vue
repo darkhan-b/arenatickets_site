@@ -2,6 +2,7 @@
 import FbSvg from '~/assets/svg/social_fb.svg?component'
 import InstaSvg from '~/assets/svg/social_instagram.svg?component'
 import WhatsAppSvg from '~/assets/svg/social_whatsapp.svg?component'
+import { setting } from '~/utils/helpers'
 </script>
 
 <template>
@@ -11,8 +12,8 @@ import WhatsAppSvg from '~/assets/svg/social_whatsapp.svg?component'
       <a><InstaSvg /></a>
       <a><WhatsAppSvg /></a>
     </div>
-    <a class="fw-bold text-white" href="mailto:info@arenatickets.kz"
-      >info@arenatickets.kz</a
-    >
+    <a class="fw-bold text-white" :href="`mailto:${setting('email')}`">{{
+      setting('email')
+    }}</a>
   </div>
 </template>
