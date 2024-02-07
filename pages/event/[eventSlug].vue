@@ -35,7 +35,7 @@
                 >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
               >
               <n-button
-                class="btn-themed text-uppercase w-100 mt-md-0 mt-2"
+                class="btn-themed btn-purchase text-uppercase mt-md-0 mt-2"
                 @click="toWidgetPurchase(show)"
                 >{{ $t('buy') }} <ArrowSvg class="svg-arrow svg-white"
               /></n-button>
@@ -91,6 +91,9 @@ const venue = show?.venue || null
   left: 20px;
   bottom: 20px;
 }
+.btn-purchase {
+  min-width: 170px;
+}
 .shadow {
   background: linear-gradient(
     180.53deg,
@@ -102,5 +105,11 @@ const venue = show?.venue || null
   right: 0;
   height: 100px;
   bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .btn-purchase {
+    min-width: 0;
+    width: 100%;
+  }
 }
 </style>
