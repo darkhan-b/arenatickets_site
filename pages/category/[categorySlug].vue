@@ -33,7 +33,7 @@ const category = ref(null)
 const loading = ref(false)
 
 const loadData = async () => {
-  const { data, error } = await useAPI(
+  const data = await useAPI(
     `category/${route.params.categorySlug}?page=${page.value}`
   )
   const categoryData = data.value?.data || null

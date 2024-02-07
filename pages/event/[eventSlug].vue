@@ -75,7 +75,7 @@ const generalStore = useGeneralStore()
 
 const { isMobile } = storeToRefs(generalStore)
 
-const { data, error } = await useAPI(`event/${route.params.eventSlug}`)
+const data = await useAPI(`event/${route.params.eventSlug}`)
 
 const showData = data.value?.data || null
 const show = showData?.event || null

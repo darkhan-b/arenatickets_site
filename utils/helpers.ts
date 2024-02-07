@@ -28,7 +28,7 @@ export const parseSort = (val: string) => {
 }
 
 export const parseAPIError = (res: any) => {
-  const error = res?.error?.value?.data?.message
+  const error = res?.error?.value?.data?.message || res?.value?.data?.message
   return error || null
 }
 

@@ -2,7 +2,7 @@ import { tokenService } from '@/utils/token.service'
 import { useGeneralStore } from '@/stores/general.store'
 import { storeToRefs } from 'pinia'
 
-export const useAPI = (request: any, opts: any = {}) => {
+export const useAPI = async (request: any, opts: any = {}) => {
   const config = useRuntimeConfig()
   const generalStore = useGeneralStore()
   const { clientId, locale } = storeToRefs(generalStore)
@@ -21,5 +21,14 @@ export const useAPI = (request: any, opts: any = {}) => {
     }
   }
 
-  return useFetch(request, { baseURL: config.public.baseURL, ...opts })
+  const { data, error } = await useFetch(request, {
+    baseURL: config.public.baseURL,
+    ...opts
+  })
+
+  if (error?.value && window.$message) {
+    window.$message.error(parseAPIError(error))
+  }
+
+  return data
 }

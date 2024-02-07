@@ -55,7 +55,7 @@ watch(
 const search = async () => {
   if (loading.value) return
   loading.value = true
-  const { data, error } = await useAPI(`search?q=${props.q}`)
+  const data = await useAPI(`search?q=${props.q}`)
   found.value = data.value?.data?.data || []
   loading.value = false
 }

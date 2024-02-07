@@ -15,7 +15,7 @@ export const useGeneralStore = defineStore('general', {
   actions: {
     async boot() {
       // runs before everything else
-      const { data } = await useAPI(`settings`)
+      const data = await useAPI(`settings`)
       this.categories = data.value.data.categories
       this.cities = data.value.data.cities
       this.translations = data.value.data.translations

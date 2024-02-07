@@ -14,10 +14,6 @@ const generalStore = useGeneralStore()
 
 const { categories } = storeToRefs(generalStore)
 
-const { data } = await useAPI(`home`)
+const data = await useAPI(`home`)
 const recommended = data.value.data.recommended
-// const blocks = data.value.data.blocks
-// const slides = data.value.data.slides
-// const cats = data.value.data.special_cats
-// const seo = data.value.data.seo_text
 </script>
