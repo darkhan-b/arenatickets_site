@@ -10,7 +10,8 @@ export const useAPI = async (request: any, opts: any = {}) => {
   opts.headers = {
     'X-API-TOKEN': config.public.apiToken,
     'X-CLIENT-ID': clientId.value,
-    'Accept-Language': locale.value
+    'Accept-Language': locale.value,
+    Accept: 'application/json'
   }
 
   const authToken = tokenService.getToken()

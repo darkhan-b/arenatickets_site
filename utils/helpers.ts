@@ -59,7 +59,7 @@ export const toWidgetPurchase = async (show: any) => {
   const config = useRuntimeConfig()
   const { user } = storeToRefs(authStore)
   let otkn = ''
-  if (user) {
+  if (user.value) {
     const res = await useAPI(`token/generate`, {
       method: 'POST'
     })
