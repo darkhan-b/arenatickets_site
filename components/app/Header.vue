@@ -11,6 +11,9 @@
           <ElementSearchHeader class="mx-auto" v-if="!isMobile" />
           <ElementMobileSearchHeader class="me-0" v-if="isMobile" />
         </div>
+        <div class="col-auto text-md-center text-end">
+          <AuthHeaderBtn />
+        </div>
         <div class="col-auto text-uppercase">
           <div class="d-flex gap-5" v-if="!isMobile">
             <nuxt-link to="/page/purchase">Как купить</nuxt-link>
@@ -20,6 +23,8 @@
         </div>
       </div>
     </div>
+    <AuthLoginModal />
+    <AuthRegisterModal />
   </header>
 </template>
 

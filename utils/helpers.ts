@@ -54,7 +54,19 @@ export const translate = (key: string) => {
   return translations.value?.[key] || key
 }
 
-export const toWidgetPurchase = (show: any) => {
-  const link = `https://widget.arenatickets.kz/1/t/${show.timetables[0].id}/${show.timetables[0].uuid}`
+export const toWidgetPurchase = async (show: any) => {
+  const authStore = useAuthStore()
+  const config = useRuntimeConfig()
+  const { user } = storeToRefs(authStore)
+  let otkn = ''
+  if (user) {
+    const res = await useAPI(`token/generate`, {
+      method: 'POST'
+    })
+    otkn = res.value.data
+  }
+  const link = `${config.public.widgetUrl}/1/t/${show.timetables[0].id}/${
+    show.timetables[0].uuid
+  }${otkn ? `?otkn=${otkn}` : ''}`
   window.open(link, '_blank')
 }

@@ -15,10 +15,7 @@ export const useAPI = async (request: any, opts: any = {}) => {
 
   const authToken = tokenService.getToken()
   if (authToken) {
-    opts.headers = {
-      ...opts.headers,
-      Authorization: `Bearer ${authToken}`
-    }
+    opts.headers['Authorization'] = `Bearer ${authToken}`
   }
 
   const { data, error } = await useFetch(request, {

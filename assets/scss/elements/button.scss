@@ -19,8 +19,11 @@
   background-color: $primary;
   color: white;
   border: none !important;
+  border-radius: 8px;
+  align-items: center;
   padding-right: 20px;
   padding-left: 20px;
+  min-height: 50px;
   font-size: 18px;
   &:hover,
   &:focus,
@@ -28,11 +31,15 @@
     background-color: $primary !important;
     color: white !important;
     border: none !important;
-    svg {
+    svg:not(.n-base-loading__svg) {
       left: 5px;
     }
   }
-  svg {
+  &:disabled {
+    background-color: $primary !important;
+    color: white !important;
+  }
+  svg:not(.n-base-loading__svg) {
     transition: all 0.15s ease-in-out;
     position: relative;
     margin-left: 20px;
@@ -42,6 +49,9 @@
 
 @media screen and (max-width: 768px) {
   .btn-themed {
+    min-height: 40px;
+  }
+  .btn-themed.btn-purchase {
     height: 50px;
     font-size: 16px;
   }

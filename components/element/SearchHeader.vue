@@ -1,14 +1,16 @@
 <template>
-  <div
+  <form
+    autocomplete="off"
     class="search-wrapper position-relative d-flex align-items-center text-center">
     <ElementSearchBlock :q="search" />
     <input
       v-model="search"
       class="form-control form-control-purple search-input w-100"
+      autocomplete="nope"
       type="text"
       :placeholder="$t('search')" />
     <n-button class="round-btn bg-white"><SearchSvg /></n-button>
-  </div>
+  </form>
 </template>
 
 <script setup>
@@ -22,6 +24,7 @@ const search = ref('')
 watch(
   () => route.path,
   () => {
+    console.log('route changed')
     search.value = ''
   }
 )

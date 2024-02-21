@@ -57,7 +57,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL: process.env.NUXT_API_URL,
-      apiToken: process.env.NUXT_API_TOKEN
+      apiToken: process.env.NUXT_API_TOKEN,
+      widgetUrl: process.env.NUXT_WIDGET_URL
     }
   },
   ssr: false,

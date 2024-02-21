@@ -80,6 +80,12 @@ h3 {
 .svg-white {
   fill: white;
 }
+.n-card-header .n-base-icon {
+  display: flex;
+}
+.narrow-content {
+  max-width: 500px;
+}
 //hr {
 //  margin: 20px 0;
 //  background: $border-color;

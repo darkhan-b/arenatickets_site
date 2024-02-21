@@ -17,11 +17,15 @@ export const useGeneralStore = defineStore('general', {
     async boot() {
       // runs before everything else
       const data = await useAPI(`settings`)
-      this.settings = data.value.data.settings
-      this.categories = data.value.data.categories
-      this.cities = data.value.data.cities
-      this.translations = data.value.data.translations
-      this.paySystems = data.value.data.paySystems
+      const authStore = useAuthStore()
+      const { user } = storeToRefs(authStore)
+      const parsed = data.value.data
+      this.settings = parsed.settings
+      this.categories = parsed.categories
+      this.cities = parsed.cities
+      this.translations = parsed.translations
+      this.paySystems = parsed.paySystems
+      user.value = parsed.user
     }
   }
 })

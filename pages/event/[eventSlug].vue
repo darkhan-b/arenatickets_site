@@ -93,6 +93,7 @@ const venue = show?.venue || null
 }
 .btn-purchase {
   min-width: 170px;
+  border-radius: 100px;
 }
 .shadow {
   background: linear-gradient(
