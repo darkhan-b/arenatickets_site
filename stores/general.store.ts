@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+import moment from 'moment/moment'
+import 'moment/locale/ru'
 
 export const useGeneralStore = defineStore('general', {
   state: () => ({
@@ -26,6 +28,7 @@ export const useGeneralStore = defineStore('general', {
       this.translations = parsed.translations
       this.paySystems = parsed.paySystems
       user.value = parsed.user
+      moment.locale('ru')
     }
   }
 })

@@ -1,5 +1,6 @@
 import { useGeneralStore } from '~/stores/general.store'
 import { storeToRefs } from 'pinia'
+import moment from 'moment/moment'
 
 export const trans = (obj: any) => {
   if (!obj) return ''
@@ -23,6 +24,26 @@ export const formatPrice = (string: number) => {
   const { currency } = storeToRefs(generalStore)
   // return `${formatNumber(string)} ₸`
   return `${formatNumber(string)} ${currency.value}`
+}
+
+export const formatDateTime = (value: string, format = 'DD.MM.YYYY, HH:mm') => {
+  if (value == '-') return value
+  return value ? moment(value).format(format) : ''
+}
+
+export const formatDate = (value: string, format = 'DD.MM.YYYY') => {
+  if (value == '-') return value
+  return value ? moment(value).format(format) : ''
+}
+
+export const formatDateWords = (value: string, format = 'DD MMM YYYY') => {
+  if (value == '-') return value
+  return value ? moment(value).format(format) : ''
+}
+
+export const formatTime = (value: string, format = 'HH:mm') => {
+  if (value == '-') return value
+  return value ? moment(value).format(format) : ''
 }
 
 export const copyObject = (obj: any) => {

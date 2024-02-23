@@ -1,0 +1,31 @@
+.order-teaser {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 2px 10px;
+  .img-teaser {
+    width: 200px;
+  }
+  .order-id {
+    font-weight: 700;
+  }
+  .btn-ticket {
+    border: 1px solid $border-color;
+    padding: 5px 14px;
+    border-radius: 6px;
+    &:hover {
+      background: $border-color;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .order-teaser {
+    .img-teaser {
+      width: 100px;
+    }
+    .btn-ticket {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

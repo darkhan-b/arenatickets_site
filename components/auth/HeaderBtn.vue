@@ -55,6 +55,7 @@ const profileOptions = computed(() => {
 const handleSelect = (key) => {
   if (key === 'logout') {
     authStore.logout()
+    router.push('/')
   }
   if (key === 'history') {
     router.push('/profile/history')
