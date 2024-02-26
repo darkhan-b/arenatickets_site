@@ -32,7 +32,7 @@ const auth = () => {
 }
 
 const profileOptions = computed(() => {
-  return [
+  const availableMenu = [
     {
       label: user?.value?.name || '',
       key: 'profile'
@@ -46,10 +46,19 @@ const profileOptions = computed(() => {
       key: 'history'
     },
     {
+      label: 'Отчет',
+      permission: 'reports',
+      key: 'report'
+    },
+    {
       label: 'Выйти',
       key: 'logout'
     }
   ]
+
+  return availableMenu.filter(
+    (item) => !item.permission || authStore.hasPermission(item.permission)
+  )
 })
 
 const handleSelect = (key) => {
@@ -62,6 +71,9 @@ const handleSelect = (key) => {
   }
   if (key === 'profile') {
     router.push('/profile/account')
+  }
+  if (key === 'report') {
+    router.push('/profile/report')
   }
 }
 </script>

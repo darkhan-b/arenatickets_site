@@ -9,6 +9,7 @@ export const useGeneralStore = defineStore('general', {
     windowWidth: 0,
     locale: 'ru',
     currency: 'KZT',
+    activeCategory: null,
     categories: [],
     cities: [],
     paySystems: [],
@@ -29,6 +30,22 @@ export const useGeneralStore = defineStore('general', {
       this.paySystems = parsed.paySystems
       user.value = parsed.user
       moment.locale('ru')
+    },
+    async autocompleteSearch(
+      model: string | undefined,
+      search: string,
+      field: string = 'title',
+      ids: Array<number> = []
+    ) {
+      try {
+        const { value } = await useAPI(
+          `/search/${model}/autocomplete/${field}?search=${search}&ids=${ids}`
+        )
+        return value
+      } catch (e) {
+        console.log(e)
+        return []
+      }
     }
   }
 })

@@ -6,6 +6,17 @@ export const useAuthStore = defineStore('auth', {
     loginModalOpened: false,
     registerModalOpened: false
   }),
+  getters: {
+    permissions: (state) => {
+      return state.user?.permissionsList || []
+    },
+    hasPermission: (state) => {
+      return (permission: string) => {
+        const permissions = state.user?.permissionsList || []
+        return permissions.includes(permission)
+      }
+    }
+  },
   actions: {
     async login(email: String, password: String) {
       const res = await useAPI(`auth/login`, {

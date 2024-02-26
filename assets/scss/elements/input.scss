@@ -23,6 +23,14 @@
     color: white;
   }
 }
+.n-select {
+  .n-base-selection {
+    min-height: 38px !important;
+    .n-tag {
+      height: 32px !important;
+    }
+  }
+}
 
 @media screen and (max-width: 768px) {
   .form-control {
