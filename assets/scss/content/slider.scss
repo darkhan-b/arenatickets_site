@@ -1,0 +1,78 @@
+.n-carousel {
+  .carousel-img {
+    img {
+      object-fit: cover;
+      height: 640px;
+      width: 100%;
+    }
+  }
+
+  .n-carousel__arrow-group {
+    bottom: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 100%;
+    right: 0 !important;
+    .n-carousel__arrow {
+      right: 20px;
+      background: #00000038;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      position: absolute;
+      margin-top: -29px;
+    }
+    > *:first-child {
+      margin-right: 0 !important;
+      left: 20px;
+      right: auto;
+    }
+  }
+  .slide-section {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    color: white;
+    h1 {
+      color: white;
+    }
+    .bubble {
+      background: white;
+    }
+  }
+  .n-carousel__slide {
+    .shadow {
+      background: linear-gradient(
+        180.53deg,
+        rgba(0, 0, 0, 0) 50.26%,
+        rgba(0, 0, 0, 0.38) 99.8%
+      );
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .n-carousel {
+    .carousel-img {
+      img {
+        height: 260px;
+      }
+    }
+    .n-carousel__arrow-group {
+      .n-carousel__arrow {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+      }
+    }
+  }
+}

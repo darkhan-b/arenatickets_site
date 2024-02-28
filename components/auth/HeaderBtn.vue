@@ -2,7 +2,7 @@
   <div>
     <a
       v-if="!user"
-      class="px-4 header-block position-relative text-white pointer text-uppercase"
+      class="px-md-4 px-4 header-block position-relative text-white pointer text-uppercase"
       @click="auth">
       {{ $t('login') }}
     </a>
@@ -12,8 +12,9 @@
       :options="profileOptions"
       @select="handleSelect">
       <a
-        class="px-4 header-block position-relative text-white pointer text-uppercase">
-        {{ user?.name }}
+        class="px-md-4 px-4 header-block position-relative text-white pointer text-uppercase">
+        <span class="d-md-inline d-none">{{ user?.name }}</span>
+        <span class="d-inline d-md-none"><UserSvg /></span>
       </a>
     </n-dropdown>
   </div>
@@ -21,6 +22,7 @@
 
 <script setup>
 import { NDropdown } from 'naive-ui'
+import UserSvg from '~/assets/svg/user.svg?component'
 const authStore = useAuthStore()
 
 const { user, loginModalOpened } = storeToRefs(authStore)

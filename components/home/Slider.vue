@@ -1,0 +1,25 @@
+<template>
+  <div v-if="slides.length">
+    <n-carousel
+      :loop="true"
+      dot-placement="bottom"
+      :show-dots="false"
+      draggable
+      show-arrow>
+      <n-carousel-item v-for="slide in slides" :key="`slide-${slide.id}`">
+        <HomeSlide :slide="slide" />
+      </n-carousel-item>
+    </n-carousel>
+  </div>
+</template>
+
+<script setup>
+import { NCarousel, NCarouselItem } from 'naive-ui'
+
+defineProps({
+  slides: {
+    type: Array,
+    required: true
+  }
+})
+</script>
