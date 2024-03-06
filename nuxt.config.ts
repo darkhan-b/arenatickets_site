@@ -61,7 +61,7 @@ export default defineNuxtConfig({
       widgetUrl: process.env.NUXT_WIDGET_URL
     }
   },
-  ssr: false,
+  ssr: true,
   css: ['~/assets/scss/app.scss'],
   vite: {
     plugins: [svgLoader()],
