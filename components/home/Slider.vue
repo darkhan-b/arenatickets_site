@@ -1,7 +1,7 @@
 <template>
   <div v-if="slides.length">
     <n-carousel
-      :loop="true"
+      :loop="slides.length > 1"
       dot-placement="bottom"
       :show-dots="false"
       draggable
