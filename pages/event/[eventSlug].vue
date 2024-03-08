@@ -60,6 +60,11 @@
         <div v-if="$trans(venue.description)">
           {{ $trans(venue.description) }}
         </div>
+        <client-only>
+          <div v-if="venue && venue.x_coord && venue.y_coord">
+            <div id="map-2gis">{{ venue.x_coord }} {{ venue.y_coord }}</div>
+          </div>
+        </client-only>
       </div>
     </div>
   </div>
@@ -80,6 +85,33 @@ const data = await useAPI(`event/${route.params.eventSlug}`)
 const showData = data.value?.data || null
 const show = showData?.event || null
 const venue = show?.venue || null
+
+useHead(
+  {
+    script: [
+      {
+        key: '2gis',
+        src: 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',
+        onload() {
+          showMap()
+        }
+      }
+    ]
+  },
+  { mode: 'client' }
+)
+
+const showMap = async () => {
+  if (venue?.x_coord && venue?.y_coord) {
+    setTimeout(() => {
+      const map = window.DG.map('map-2gis', {
+        center: [venue.y_coord, venue.x_coord],
+        zoom: 17
+      })
+      window.DG.marker([venue.y_coord, venue.x_coord]).addTo(map)
+    }, 100)
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -106,6 +138,11 @@ const venue = show?.venue || null
   right: 0;
   height: 100px;
   bottom: 0;
+}
+#map-2gis {
+  height: 280px;
+  width: 100%;
+  margin-top: 16px;
 }
 @media screen and (max-width: 768px) {
   .btn-purchase {
