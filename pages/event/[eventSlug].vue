@@ -62,7 +62,7 @@
         </div>
         <client-only>
           <div v-if="venue && venue.x_coord && venue.y_coord">
-            <div id="map-2gis">{{ venue.x_coord }} {{ venue.y_coord }}</div>
+            <div id="map-2gis"></div>
           </div>
         </client-only>
       </div>
@@ -109,7 +109,7 @@ const showMap = async () => {
         zoom: 17
       })
       window.DG.marker([venue.y_coord, venue.x_coord]).addTo(map)
-    }, 100)
+    }, 500)
   }
 }
 </script>
