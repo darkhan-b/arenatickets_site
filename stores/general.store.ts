@@ -19,6 +19,7 @@ export const useGeneralStore = defineStore('general', {
   actions: {
     async boot() {
       // runs before everything else
+      this.locale = langService.getLang() || 'ru'
       const data = await useAPI(`settings`)
       const authStore = useAuthStore()
       const { user } = storeToRefs(authStore)
@@ -29,7 +30,7 @@ export const useGeneralStore = defineStore('general', {
       this.translations = parsed.translations
       this.paySystems = parsed.paySystems
       user.value = parsed.user
-      moment.locale('ru')
+      moment.locale(this.locale)
     },
     async autocompleteSearch(
       model: string | undefined,
