@@ -75,10 +75,14 @@ export const translate = (key: string) => {
   return translations.value?.[key] || key
 }
 
-export const toWidgetPurchase = async (show: any) => {
+export const toWidgetPurchase = async (show: any, timetable = null) => {
+  if (!timetable) timetable = show.timetables[0]
+  if (!timetable) return
   const authStore = useAuthStore()
+  const generalStore = useGeneralStore()
   const config = useRuntimeConfig()
   const { user } = storeToRefs(authStore)
+  const { locale } = storeToRefs(generalStore)
   let otkn = ''
   if (user.value) {
     const res = await useAPI(`token/generate`, {
@@ -86,8 +90,6 @@ export const toWidgetPurchase = async (show: any) => {
     })
     otkn = res.value.data
   }
-  const link = `${config.public.widgetUrl}/1/t/${show.timetables[0].id}/${
-    show.timetables[0].uuid
-  }${otkn ? `?otkn=${otkn}` : ''}`
+  const link = `${config.public.widgetUrl}/1/t/${timetable.id}/${timetable.uuid}?otkn=${otkn}&lang=${locale.value}`
   window.open(link, '_blank')
 }

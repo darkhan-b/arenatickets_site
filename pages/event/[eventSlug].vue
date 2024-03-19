@@ -44,6 +44,23 @@
         </div>
       </section>
 
+      <section class="mt-section" v-if="timetables.length > 1">
+        <h3>{{ $t('schedule') }}</h3>
+        <div class="row">
+          <div
+            class="col-auto"
+            v-for="timetable in timetables"
+            :key="`t-${timetable.id}`">
+            <n-button
+              class="btn-themed btn-purchase btn-themed-outline btn-sizing"
+              @click="toWidgetPurchase(show, timetable)"
+              >{{ formatDateWords(timetable.date) }}
+              <ArrowSvg class="svg-arrow svg-primary"
+            /></n-button>
+          </div>
+        </div>
+      </section>
+
       <section class="mt-section" v-if="$trans(show.description)">
         <h3>{{ $t('about_event') }}</h3>
         <article class="html-article">
@@ -73,7 +90,7 @@
 <script setup>
 import ArrowSvg from '~/assets/svg/arrow_r.svg?component'
 import { NButton } from 'naive-ui'
-import { formatPrice } from '~/utils/helpers'
+import { formatDateWords, formatPrice } from '~/utils/helpers'
 
 const route = useRoute()
 const generalStore = useGeneralStore()
@@ -85,6 +102,7 @@ const data = await useAPI(`event/${route.params.eventSlug}`)
 const showData = data.value?.data || null
 const show = showData?.event || null
 const venue = show?.venue || null
+const timetables = show?.timetables || []
 
 useHead(
   {
