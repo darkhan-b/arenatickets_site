@@ -19,8 +19,8 @@
         </div>
         <div class="col-auto text-uppercase">
           <div class="d-flex gap-5" v-if="!isMobile">
-            <nuxt-link to="/page/purchase">Как купить</nuxt-link>
-            <nuxt-link to="/page/contacts">Контакты</nuxt-link>
+            <nuxt-link to="/page/purchase">{{ $t('how_to_buy') }}</nuxt-link>
+            <nuxt-link to="/page/contacts">{{ $t('contacts') }}</nuxt-link>
           </div>
           <ElementMobileMenu class="ps-3" v-if="isMobile" />
         </div>

@@ -44,16 +44,16 @@ const profileOptions = computed(() => {
       key: 'd1'
     },
     {
-      label: 'История заказов',
+      label: translate('order_history'),
       key: 'history'
     },
     {
-      label: 'Отчет',
+      label: translate('report'),
       permission: 'reports',
       key: 'report'
     },
     {
-      label: 'Выйти',
+      label: translate('logout'),
       key: 'logout'
     }
   ]

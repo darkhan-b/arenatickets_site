@@ -56,9 +56,6 @@ watch(
 </script>
 
 <style scoped lang="scss">
-//.search-wrapper {
-//  max-width: 386px;
-//}
 .drawer-wrap {
   background: $primary;
   height: 60px;
