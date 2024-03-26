@@ -58,6 +58,10 @@ const props = defineProps({
   }
 })
 
+const generalStore = useGeneralStore()
+
+const { isMobile } = storeToRefs(generalStore)
+
 const router = useRouter()
 
 const slideClicked = () => {

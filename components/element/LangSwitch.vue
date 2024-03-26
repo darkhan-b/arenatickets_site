@@ -19,8 +19,9 @@ const options = [
   { label: 'English', key: 'en' }
 ]
 
-const changeLocale = (lang) => {
+const changeLocale = async (lang) => {
   langService.saveLang(lang)
   locale.value = lang
+  await generalStore.initialLoad(lang)
 }
 </script>

@@ -19,7 +19,10 @@ export const useGeneralStore = defineStore('general', {
   actions: {
     async boot() {
       // runs before everything else
-      this.locale = langService.getLang() || 'ru'
+      await this.initialLoad()
+    },
+    async initialLoad(lang = null) {
+      this.locale = lang || langService.getLang() || 'ru'
       const data = await useAPI(`settings`)
       const authStore = useAuthStore()
       const { user } = storeToRefs(authStore)
