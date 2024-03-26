@@ -7,7 +7,7 @@
       draggable
       show-arrow>
       <n-carousel-item v-for="slide in slides" :key="`slide-${slide.id}`">
-        <HomeSlide :slide="slide" />
+        <HomeSlide :slide="slide" :view="view" />
       </n-carousel-item>
     </n-carousel>
   </div>
@@ -20,6 +20,10 @@ defineProps({
   slides: {
     type: Array,
     required: true
+  },
+  view: {
+    type: String,
+    default: 'home'
   }
 })
 </script>

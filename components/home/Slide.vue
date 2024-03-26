@@ -8,7 +8,7 @@
         :srcset="slide.mobile" />
       <img :src="slide.main" alt="" />
     </picture>
-    <section class="slide-section">
+    <section class="slide-section" v-if="view === 'home'">
       <div class="container">
         <div class="d-flex align-items-center gap-3" v-if="show">
           <div>{{ show.dateString }}</div>
@@ -51,6 +51,10 @@ const props = defineProps({
   slide: {
     type: Object,
     required: true
+  },
+  view: {
+    type: String,
+    default: 'home'
   }
 })
 

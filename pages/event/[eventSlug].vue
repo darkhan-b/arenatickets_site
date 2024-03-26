@@ -68,6 +68,8 @@
         </article>
       </section>
 
+      <EventGallerySlider :gallery="gallery" />
+
       <section class="mt-section" v-if="venue">
         <h3>{{ $t('address') }}</h3>
       </section>
@@ -100,6 +102,7 @@ const { isMobile } = storeToRefs(generalStore)
 const data = await useAPI(`event/${route.params.eventSlug}`)
 
 const showData = data.value?.data || null
+const gallery = showData?.gallery || []
 const show = showData?.event || null
 const venue = show?.venue || null
 const timetables = show?.timetables || []
