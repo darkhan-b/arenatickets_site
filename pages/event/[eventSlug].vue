@@ -48,7 +48,7 @@
         <h3>{{ $t('schedule') }}</h3>
         <div class="row">
           <div
-            class="col-auto"
+            class="col-auto col-6 mb-md-0 mb-3"
             v-for="timetable in timetables"
             :key="`t-${timetable.id}`">
             <n-button
