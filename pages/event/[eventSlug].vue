@@ -8,7 +8,7 @@
             media="(max-width:576px)"
             class="w-100"
             :srcset="show.mobileSlide" />
-          <img class="banner w-100" :src="show.slide" alt="banner" />
+          <img class="banner w-100" :src="show.main" alt="banner" />
         </picture>
         <div class="shadow" v-if="isMobile"></div>
         <ElementTag v-if="isMobile" class="abs-tag"
