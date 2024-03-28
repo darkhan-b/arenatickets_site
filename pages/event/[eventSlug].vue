@@ -2,18 +2,20 @@
   <div class="mb-section">
     <section>
       <div class="position-relative">
-        <picture>
-          <source
-            v-if="show.mobileSlide"
-            media="(max-width:576px)"
-            class="w-100"
-            :srcset="show.mobileSlide" />
-          <img class="banner w-100" :src="show.main" alt="banner" />
-        </picture>
-        <div class="shadow" v-if="isMobile"></div>
-        <ElementTag v-if="isMobile" class="abs-tag"
-          >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
-        >
+        <div class="rounded-4 overflow-hidden">
+          <picture>
+            <source
+              v-if="show.mobileSlide"
+              media="(max-width:576px)"
+              class="w-100"
+              :srcset="show.mobileSlide" />
+            <img class="banner w-100" :src="show.main" alt="banner" />
+          </picture>
+          <div class="shadow" v-if="isMobile"></div>
+          <ElementTag v-if="isMobile" class="abs-tag"
+            >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
+          >
+        </div>
       </div>
     </section>
     <div class="container mt-md-5 mt-1">
