@@ -84,12 +84,13 @@ export const toWidgetPurchase = async (show: any, timetable = null) => {
   const { user } = storeToRefs(authStore)
   const { locale } = storeToRefs(generalStore)
   let otkn = ''
+  const windowReference = window.open('about:blank', '_blank')
   if (user.value) {
     const res = await useAPI(`token/generate`, {
       method: 'POST'
     })
     otkn = res.value.data
   }
-  const link = `${config.public.widgetUrl}/1/t/${timetable.id}/${timetable.uuid}?otkn=${otkn}&lang=${locale.value}`
-  window.open(link, '_blank')
+  const link = `${config.public.widgetUrl}/1/t/${timetable.show_id}/${timetable.uuid}?otkn=${otkn}&lang=${locale.value}`
+  windowReference.location = link
 }
