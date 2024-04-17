@@ -50,7 +50,21 @@ const loadMore = async () => {
   loading.value = false
 }
 
-loadData()
+await loadData()
+
+const title = trans(category.value.title)
+const description = `Продажа билетов на ${trans(category.value.title)}`
+
+useHead({
+  title,
+  meta: [
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description }
+  ]
+})
 </script>
 
 <style scoped lang="scss">

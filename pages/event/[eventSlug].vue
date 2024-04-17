@@ -108,6 +108,8 @@ const gallery = showData?.gallery || []
 const show = showData?.event || null
 const venue = show?.venue || null
 const timetables = show?.timetables || []
+const title = trans(show.title)
+const description = `Продажа билетов на ${trans(show.title)}`
 
 useHead(
   {
@@ -123,6 +125,18 @@ useHead(
   },
   { mode: 'client' }
 )
+
+useHead({
+  title,
+  meta: [
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { name: 'og:image', content: show.main },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description }
+  ]
+})
 
 const showMap = async () => {
   if (venue?.x_coord && venue?.y_coord) {

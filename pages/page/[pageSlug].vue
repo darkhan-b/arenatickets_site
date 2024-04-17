@@ -23,5 +23,19 @@ const loadPage = async () => {
   }
 }
 
-loadPage()
+await loadPage()
+
+const title = trans(page.value?.title || '')
+const description = trans(page.value?.title || '')
+
+useHead({
+  title,
+  meta: [
+    { name: 'description', content: description },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description }
+  ]
+})
 </script>
