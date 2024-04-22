@@ -28,6 +28,7 @@
     </div>
     <AuthLoginModal />
     <AuthRegisterModal />
+    <AuthForgotModal />
   </header>
 </template>
 

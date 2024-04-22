@@ -26,6 +26,9 @@
           text
           >{{ $t('login') }}</n-button
         >
+        <a class="pointer text-primary" @click="forgotPassword"
+          >{{ $t('forgot_password') }}?</a
+        >
       </n-space>
       <hr class="mt-4" />
 
@@ -46,7 +49,8 @@ import { NModal, NInput, NSpace, NButton } from 'naive-ui'
 
 const authStore = useAuthStore()
 
-const { loginModalOpened, registerModalOpened } = storeToRefs(authStore)
+const { loginModalOpened, registerModalOpened, forgotModalOpened } =
+  storeToRefs(authStore)
 
 const valid = computed(() => {
   return email.value && password.value
@@ -72,5 +76,10 @@ const loginClicked = async () => {
 const register = () => {
   loginModalOpened.value = false
   registerModalOpened.value = true
+}
+
+const forgotPassword = () => {
+  loginModalOpened.value = false
+  forgotModalOpened.value = true
 }
 </script>
