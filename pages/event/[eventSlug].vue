@@ -2,7 +2,7 @@
   <div class="mb-section">
     <section>
       <div class="position-relative">
-        <div class="rounded-4 overflow-hidden">
+        <div class="overflow-hidden">
           <picture>
             <source
               v-if="show.mobileSlide"

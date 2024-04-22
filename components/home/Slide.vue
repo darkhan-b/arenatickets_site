@@ -6,31 +6,34 @@
         v-if="slide.mobile"
         media="(max-width:576px)"
         :srcset="slide.mobile" />
-      <img :src="slide.main" alt="" />
+      <img :src="slide.slide" alt="" />
     </picture>
     <section class="slide-section" v-if="view === 'home'">
       <div class="container">
-        <div class="d-flex align-items-center gap-3" v-if="show">
-          <div>{{ show.dateString }}</div>
-          <div class="bubble"></div>
-          <div>{{ $trans(show.city.title) }}</div>
-          <div class="bubble"></div>
-          <div>{{ show.placeString }}</div>
-        </div>
-        <div class="d-flex align-items-center gap-3" v-else>
-          <div>{{ $trans(slide.subtitle) }}</div>
-        </div>
         <div class="row align-items-center">
           <div class="col-md col-12">
             <h1>{{ $trans(show ? show.title : slide.title) }}</h1>
+            <div
+              class="d-flex align-items-center gap-3 mt-md-2 mt-0"
+              v-if="show">
+              <div>{{ show.dateString }}</div>
+              <div class="bubble"></div>
+              <div>{{ $trans(show.city.title) }}</div>
+              <div class="bubble"></div>
+              <div>{{ show.placeString }}</div>
+            </div>
+            <div class="d-flex align-items-center gap-3" v-else>
+              <div>{{ $trans(slide.subtitle) }}</div>
+            </div>
           </div>
-          <div class="col-md-auto col-12">
+
+          <div class="col-md-auto col-12 mt-md-0 mt-2">
             <div class="d-flex align-center">
-              <ElementTag v-if="!isMobile"
+              <ElementTag class="bg-white"
                 >{{ $t('from') }} {{ formatPrice(show.minCost) }}</ElementTag
               >
               <n-button
-                class="btn-themed btn-purchase text-uppercase mt-md-0 mt-2 ms-3"
+                class="btn-themed btn-purchase text-uppercase"
                 @click="toWidgetPurchase(show)"
                 >{{ $t('buy') }} <ArrowSvg class="svg-arrow svg-white"
               /></n-button>

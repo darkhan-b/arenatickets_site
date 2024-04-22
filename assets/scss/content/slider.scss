@@ -1,8 +1,14 @@
+.home-slider {
+  margin-top: 30px;
+  .n-carousel {
+    border-radius: 44px;
+  }
+}
 .n-carousel {
   .carousel-img {
     img {
       object-fit: cover;
-      height: 640px;
+      height: 432px;
       width: 100%;
     }
   }
@@ -34,11 +40,21 @@
     width: 100%;
     z-index: 2;
     color: white;
+    padding: 0 20px;
     h1 {
       color: white;
     }
     .bubble {
       background: white;
+    }
+    .btn-purchase {
+      border-radius: 100px;
+      .n-button__border {
+        display: none;
+      }
+      svg {
+        width: 40px;
+      }
     }
   }
   .n-carousel__slide {
@@ -61,6 +77,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .home-slider {
+    margin-top: 0;
+    .n-carousel {
+      border-radius: 0;
+    }
+  }
+  .slider-container {
+    padding: 0 0;
+  }
   .n-carousel {
     .carousel-img {
       img {
@@ -72,6 +97,17 @@
         width: 30px;
         height: 30px;
         margin-top: -15px;
+      }
+    }
+    .slide-section {
+      font-size: 12px;
+      .btn-purchase {
+        font-size: 12px;
+        height: 30px;
+        min-height: 30px;
+        svg {
+          width: 20px;
+        }
       }
     }
   }

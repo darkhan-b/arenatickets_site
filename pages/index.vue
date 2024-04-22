@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--    <HomeSlider :slides="slides" />-->
+    <HomeSlider :slides="slides" />
     <div class="container py-5 text-center">
       <HomePopular :data="recommended" />
       <HomeCategories class="mt-5 pt-3" />
