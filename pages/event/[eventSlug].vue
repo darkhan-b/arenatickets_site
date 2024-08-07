@@ -50,13 +50,13 @@
         <h3>{{ $t('schedule') }}</h3>
         <div class="row">
           <div
-            class="col-auto col-6 mb-md-0 mb-3"
+            class="col-6 col-lg-4 mb-3"
             v-for="timetable in timetables"
             :key="`t-${timetable.id}`">
             <n-button
-              class="btn-themed btn-purchase btn-themed-outline btn-sizing"
+              class="btn-themed w-100 btn-purchase btn-themed-outline btn-sizing"
               @click="toWidgetPurchase(show, timetable)"
-              >{{ formatDateWords(timetable.date) }}
+              >{{ formatDateWords(timetable.date, 'DD MMM YYYY, HH:mm') }}
               <ArrowSvg class="svg-arrow svg-primary"
             /></n-button>
           </div>
