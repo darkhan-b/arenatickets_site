@@ -30,4 +30,9 @@
       padding-bottom: 34px;
     }
   }
+  #home-popular {
+    .n-carousel__slide {
+      width: calc((100vw - 24px) * 0.8);
+    }
+  }
 }

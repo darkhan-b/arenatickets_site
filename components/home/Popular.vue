@@ -2,7 +2,7 @@
   <section id="home-popular">
     <h2>{{ $t('popular') }}</h2>
     <n-carousel
-      :slides-per-view="isMobile ? 1.2 : 3"
+      :slides-per-view="isMobile ? 'auto' : 3"
       :space-between="isMobile ? 20 : 40"
       :loop="true"
       draggable>
