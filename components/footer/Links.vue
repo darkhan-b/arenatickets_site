@@ -22,7 +22,6 @@
         $t('refund')
       }}</nuxt-link>
     </div>
-    <div class="d-md-inline-flex gap-5"></div>
   </div>
 </template>
 <script setup lang="ts"></script>
