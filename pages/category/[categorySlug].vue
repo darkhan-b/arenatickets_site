@@ -76,4 +76,9 @@ useHead({
 #category {
   padding-bottom: 80px;
 }
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
