@@ -10,8 +10,9 @@
                 <n-input-group-label>Дата от</n-input-group-label>
                 <n-date-picker
                   class="w-100"
+                  value-format="yyyy-MM-dd"
                   placeholder=""
-                  v-model:value="date_from" />
+                  v-model:formatted-value="date_from" />
               </n-input-group>
             </n-grid-item>
             <n-grid-item>
@@ -19,8 +20,9 @@
                 <n-input-group-label>Дата до</n-input-group-label>
                 <n-date-picker
                   class="w-100"
+                  value-format="yyyy-MM-dd"
                   placeholder=""
-                  v-model:value="date_to" />
+                  v-model:formatted-value="date_to" />
               </n-input-group>
             </n-grid-item>
           </n-grid>
