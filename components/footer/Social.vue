@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FbSvg from '~/assets/svg/social_fb.svg?component'
+// import FbSvg from '~/assets/svg/social_fb.svg?component'
 import InstaSvg from '~/assets/svg/social_instagram.svg?component'
 import WhatsAppSvg from '~/assets/svg/social_whatsapp.svg?component'
 import { setting } from '~/utils/helpers'
@@ -9,9 +9,11 @@ import { setting } from '~/utils/helpers'
   <div class="d-md-flex d-block justify-content-between">
     <div class="d-flex gap-5 align-items-center">
       <div class="d-flex gap-4">
-        <a><FbSvg /></a>
-        <a><InstaSvg /></a>
-        <a><WhatsAppSvg /></a>
+        <!--        <a><FbSvg /></a>-->
+        <a href="https://www.instagram.com/arenatickets.kz/" target="_blank"
+          ><InstaSvg
+        /></a>
+        <a href="https://wa.me/77771043856" target="_blank"><WhatsAppSvg /></a>
       </div>
       <a class="fw-bold text-white" :href="`mailto:${setting('email')}`">{{
         setting('email')
